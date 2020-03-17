@@ -1,0 +1,18 @@
+<!--
+使用 wx:for-item 可以指定数组当前元素的变量名，
+使用 wx:for-index 可以指定数组当前下标的变量名：-->
+
+<view class='box1'>
+  <block wx:for="{{messageList}}" wx:key="index">
+    <view wx:if="{{item.textAlign === 'left'}}" class='fromLeft'>
+      <text bindtap='butText'>{{item.text}}</text>
+    </view>
+    <view wx:else class='fromRight'>
+      <text>{{item.text}}</text>
+    </view>
+  </block>
+</view>
+<view class='box2'>
+  <input bindinput='input1' type='text' placeholder="编辑内容"value='{{inputtext}}'></input>
+  <button bindtap='button1' size= 'mini'>发送</button>
+</view>
