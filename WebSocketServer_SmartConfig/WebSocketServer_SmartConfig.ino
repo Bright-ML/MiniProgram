@@ -5,7 +5,7 @@
 //#include <Hash.h>
 
 WebSocketsServer webSocket = WebSocketsServer(80);
-char service[] = "http";
+char service[] = "websocket";
 char proto[] = "tcp";
 void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
   switch (type) {
@@ -33,18 +33,17 @@ void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(115200);  
+  smartConfig();//这里调用一键配网函数,替换上面的普通配网
+  
   Serial.setDebugOutput(true);
-
   Serial.println();
 
   for (uint8_t t = 4; t > 0; t--) { //等待t秒之后
     Serial.printf("[SETUP] BOOT WAIT %d...\n", t);
-    Serial.flush();
+    Serial.flush(); //等待串口数据发送结束
     delay(1000);
   }
-
-  smartConfig();//这里调用一键配网函数,替换上面的普通配网
 
   if (MDNS.begin("esp8266")) {   // void setup下编写
     Serial.println("MDNS responder started");
