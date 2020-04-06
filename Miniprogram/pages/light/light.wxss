@@ -1,0 +1,40 @@
+.box1 {
+  background: rgb(223, 204, 204);
+  width: 100%;
+  height: 180px;
+  padding: 0 20rpx;
+}
+
+.fromLeft {
+  padding: 10rpx;
+  width: 690rpx;
+  text-align: left;
+  background-color: rgb(150, 167, 241);
+  color: white;
+}
+
+.fromRight {
+  padding: 10rpx;
+  width: 690rpx;
+  text-align: right;
+  background-color: #dfdfdf;
+  color: white;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+}
+
+.box2 > input {
+  border: solid 2rpx #dfdfdf;
+  border-radius: 4rpx;
+  width: 550rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-right: 10rpx;
+}

@@ -1,0 +1,36 @@
+<!--
+使用 wx:for-item 可以指定数组当前元素的变量名，
+使用 wx:for-index 可以指定数组当前下标的变量名：-->
+
+<scroll-view scroll-y='true' scroll-top="{{scrollTop}}" class='box1'>
+	<block wx:for="{{messageList}}" wx:key="index">
+		<view wx:if="{{item.textAlign === 'left'}}" class='fromLeft'>
+			<text bindtap='butText'>{{item.text}}</text>
+		</view>
+		<view wx:else class='fromRight'>
+			<text>{{item.text}}</text>
+		</view>
+	</block>
+</scroll-view>
+<!--view class='box2'>
+	<input bindinput='input1' type='text' placeholder="编辑内容" value='{{inputtext}}'></input>
+	<button bindtap='button1' size='mini'>发送</button>
+</view-->
+<view  class='box2'>
+	<button bindtap='button2' data-btnname="{{btnname}}">{{btnname}}</button>
+</view>
+<view  class='box2'>
+  <button bindtap='button3'>小夜灯模式</button>
+</view>
+<view  class='box2'>
+  <button bindtap='button4'>炫彩灯模式</button>
+</view>
+<view  class='box2'>
+  <button bindtap='button5'>呼吸灯模式</button>
+</view>
+<view  class='box2'>
+  <button bindtap='button6'>随机模式</button>
+</view>
+<view  class='box2'>
+  <button bindtap='button7'>全部关闭</button>
+</view>
